@@ -1,12 +1,13 @@
+#Region "usings"
 Imports System.Collections
 Imports System.Drawing
 Imports System.Drawing.Drawing2D
 Imports DevExpress.XtraPrinting
 Imports DevExpress.XtraPrinting.BrickExporters
-' ...
+#End Region
 
 Namespace MyBrick
-
+    #Region "HyperLinkBrick"
     Public Class HyperLinkBrick
         Inherits TextBrick
 
@@ -48,7 +49,7 @@ Namespace MyBrick
             Me.Font = MyBase.Font
         End Sub
     End Class
-
+#End Region
 #Region "#EllipseBrick"
     <BrickExporter(GetType(EllipseBrickExporter))> _
     Public Class EllipseBrick
