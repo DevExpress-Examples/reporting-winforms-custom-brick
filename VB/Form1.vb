@@ -1,10 +1,11 @@
+#Region "usings"
 Imports System
 Imports System.Drawing
 Imports System.Drawing.Drawing2D
 Imports System.Windows.Forms
 Imports DevExpress.XtraPrinting
 Imports MyBrick
-' ...
+#End Region
 
 Namespace CustomBricks
     Partial Public Class Form1

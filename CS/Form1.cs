@@ -1,10 +1,11 @@
+#region usings
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using DevExpress.XtraPrinting;
 using MyBrick;
-// ...
+#endregion
 
 namespace CustomBricks {
     public partial class Form1 : Form {
