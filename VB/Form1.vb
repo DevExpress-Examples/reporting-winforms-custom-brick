@@ -41,7 +41,7 @@ Namespace CustomBricks
             Handles button2.Click
 
             ' Create a brick.
-            Dim brick As IBrick = New EllipseBrick(Color.LightGreen, Color.Blue, _
+            Dim brick As Brick = New EllipseBrick(Color.LightGreen, Color.Blue, _
                                                    LinearGradientMode.ForwardDiagonal)
 
             ' Start the report generation.

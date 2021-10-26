@@ -36,7 +36,7 @@ namespace CustomBricks {
         #region #UsingEllipseBrick
         private void button2_Click(object sender, EventArgs e) {
             // Create a brick.
-            IBrick brick = new EllipseBrick(Color.LightGreen, Color.Blue,
+            Brick brick = new EllipseBrick(Color.LightGreen, Color.Blue,
                 LinearGradientMode.ForwardDiagonal);
 
             // Start the report generation.
