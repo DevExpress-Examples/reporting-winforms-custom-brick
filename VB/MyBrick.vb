@@ -11,12 +11,10 @@ Namespace MyBrick
     Public Class HyperLinkBrick
         Inherits TextBrick
 
-        ' Constructor, which creates a brick with a single parameter.
         Public Sub New(ByVal url As String)
             Me.New(url, url)
         End Sub
 
-        ' Constructor, which creates a brick with a specific url and hint values.
         Public Sub New(ByVal url As String, ByVal hint As String)
             MyBase.New()
             Me.Url = url
@@ -62,11 +60,9 @@ Namespace MyBrick
         ' Set gradient direction.
         Public GradientDirection As LinearGradientMode = LinearGradientMode.Vertical
 
-        ' Default constructor.
         Public Sub New()
         End Sub
 
-        ' Constructor, initializing gradient colors and direction.
         Public Sub New(ByVal InnerColor As Color, ByVal OuterColor As Color,
         ByVal GradientDirection As LinearGradientMode)
             Me.InnerColor = InnerColor
@@ -83,7 +79,6 @@ Namespace MyBrick
             End Get
         End Property
         ' Fills an ellipse with a linear color gradient.
-
         Public Overloads Overrides Sub Draw(ByVal gr As IGraphics, ByVal rect As RectangleF)
             Dim brush As New LinearGradientBrush(rect, EllipseBrick.OuterColor,
                 EllipseBrick.InnerColor, EllipseBrick.GradientDirection)

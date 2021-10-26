@@ -10,12 +10,10 @@ namespace MyBrick {
     #region HyperLinkBrick
     public class HyperLinkBrick : TextBrick {
 
-        // Constructor, which creates a brick with a single parameter.
         public HyperLinkBrick(string url)
             : this(url, url) {
         }
 
-        // Constructor, which creates a brick with a specific url and hint values.
         public HyperLinkBrick(string url, string hint)
             : base() {
             this.Url = url;
@@ -61,11 +59,9 @@ namespace MyBrick {
         // Set gradient direction.
         public LinearGradientMode GradientDirection = LinearGradientMode.Vertical;
 
-        // Default constructor.
         public EllipseBrick() {
         }
-
-        // Constructor, initializing gradient colors and direction.
+        
         public EllipseBrick(Color InnerColor, Color OuterColor, LinearGradientMode GradientDirection) {
             this.InnerColor = InnerColor;
             this.OuterColor = OuterColor;
@@ -76,7 +72,6 @@ namespace MyBrick {
     public class EllipseBrickExporter : BrickExporter {
         EllipseBrick EllipseBrick { get { return (EllipseBrick)Brick; } }
         // Fills an ellipse with a linear color gradient.
-
         public override void Draw(IGraphics gr, RectangleF rect) {
             LinearGradientBrush brush = new LinearGradientBrush(rect, EllipseBrick.OuterColor,
                 EllipseBrick.InnerColor, EllipseBrick.GradientDirection);
