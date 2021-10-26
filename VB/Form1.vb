@@ -4,8 +4,8 @@ Imports System.Drawing
 Imports System.Drawing.Drawing2D
 Imports System.Windows.Forms
 Imports DevExpress.XtraPrinting
-Imports MyBrick
 #End Region
+Imports MyBrick
 
 Namespace CustomBricks
     Partial Public Class Form1
@@ -27,9 +27,9 @@ Namespace CustomBricks
             printingSystem1.PreviewFormEx.Show()
         End Sub
 
-#Region "#UsingEllipseBrick"
         Private Sub button2_Click(ByVal sender As Object, ByVal e As EventArgs) _
             Handles button2.Click
+            #Region "#UsingEllipseBrick"
             Dim brick As Brick = New EllipseBrick(Color.LightGreen, Color.Blue, _
                                                    LinearGradientMode.ForwardDiagonal)
             printingSystem1.Begin()
@@ -40,7 +40,8 @@ Namespace CustomBricks
             graph.DrawBrick(brick, New RectangleF(0, 0, 150, 100))
             printingSystem1.End().
             printingSystem1.PreviewFormEx.Show()
+            #End Region
         End Sub
-#End Region
+
     End Class
 End Namespace
