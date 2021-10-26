@@ -51,7 +51,7 @@ namespace MyBrick {
 
     #region #EllipseBrick
     [BrickExporter(typeof(EllipseBrickExporter))]
-    public class EllipseBrick : IBrick {
+    public class EllipseBrick : Brick {
 
         // Set gradient colors for inner and outer ellipse regions.
         public Color InnerColor = Color.Transparent;
@@ -70,27 +70,13 @@ namespace MyBrick {
             this.OuterColor = OuterColor;
             this.GradientDirection = GradientDirection;
         }
-
-
-        // This method is required by the IBrick interface.
-        public Hashtable GetProperties() {
-            return null;
-        }
-
-        // This method is required by the IBrick interface.
-        public void SetProperties(object[,] properties) {
-        }
-
-        // This method is required by the IBrick interface.
-        public void SetProperties(Hashtable properties) {
-        }
     }
 
     public class EllipseBrickExporter : BrickExporter {
-        EllipseBrick EllipseBrick { get { return Brick as EllipseBrick; } }
+        EllipseBrick EllipseBrick { get { return (EllipseBrick)Brick; } }
         // Fills an ellipse with a linear color gradient.
 
-        public override void Draw(Graphics gr, RectangleF rect) {
+        public override void Draw(IGraphics gr, RectangleF rect) {
             LinearGradientBrush brush = new LinearGradientBrush(rect, EllipseBrick.OuterColor,
                 EllipseBrick.InnerColor, EllipseBrick.GradientDirection);
             ColorBlend colorBlend = new ColorBlend();

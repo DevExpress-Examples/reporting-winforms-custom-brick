@@ -9,11 +9,10 @@
 * [Form1.cs](./CS/Form1.cs) (VB: [Form1.vb](./VB/Form1.vb))
 * [MyBrick.cs](./CS/MyBrick.cs) (VB: [MyBrick.vb](./VB/MyBrick.vb))
 <!-- default file list end -->
-# How to create a custom brick
 
+# How to Create a Custom Brick
 
-<p>This example demonstrates two ways of creating a custom brick. One of them requires deriving a custom brick class from one of the existing brick classes (either the <strong>BrickBase</strong> class, or its descendants), while another one requires implementing the <strong>IBrick</strong> interface.</p>
+This example demonstrates how to inherit from existing Brick classes to create custom bricks.
 
-<br/>
-
+For more information on Brick classes, review the following help topic: [Bricks](https://docs.devexpress.com/WindowsForms/88/controls-and-libraries/printing-exporting/concepts/basic-terms/bricks).
 

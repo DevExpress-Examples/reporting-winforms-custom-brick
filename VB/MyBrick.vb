@@ -52,7 +52,7 @@ Namespace MyBrick
 #Region "#EllipseBrick"
     <BrickExporter(GetType(EllipseBrickExporter))> _
     Public Class EllipseBrick
-        Implements IBrick
+        Inherits Brick
 
         ' Set gradient colors for inner and outer ellipse regions.
         Public InnerColor As Color = Color.Transparent
@@ -66,25 +66,11 @@ Namespace MyBrick
         End Sub
 
         ' Constructor, initializing gradient colors and direction.
-        Public Sub New(ByVal InnerColor As Color, ByVal OuterColor As Color, _
+        Public Sub New(ByVal InnerColor As Color, ByVal OuterColor As Color,
         ByVal GradientDirection As LinearGradientMode)
             Me.InnerColor = InnerColor
             Me.OuterColor = OuterColor
             Me.GradientDirection = GradientDirection
-        End Sub
-
-
-        ' This method is required by the IBrick interface.
-        Public Function GetProperties() As Hashtable Implements IBrick.GetProperties
-            Return Nothing
-        End Function
-
-        ' This method is required by the IBrick interface.
-        Public Sub SetProperties(ByVal properties(,) As Object) Implements IBrick.SetProperties
-        End Sub
-
-        ' This method is required by the IBrick interface.
-        Public Sub SetProperties(ByVal properties As Hashtable) Implements IBrick.SetProperties
         End Sub
     End Class
 
@@ -97,12 +83,12 @@ Namespace MyBrick
         End Property
         ' Fills an ellipse with a linear color gradient.
 
-        Public Overloads Overrides Sub Draw(ByVal gr As Graphics, ByVal rect As RectangleF)
-            Dim brush As New LinearGradientBrush(rect, EllipseBrick.OuterColor, _
+        Public Overloads Overrides Sub Draw(ByVal gr As IGraphics, ByVal rect As RectangleF)
+            Dim brush As New LinearGradientBrush(rect, EllipseBrick.OuterColor,
                 EllipseBrick.InnerColor, EllipseBrick.GradientDirection)
             Dim colorBlend As New ColorBlend()
             colorBlend.Positions = New Single() {0.0F, 0.5F, 1.0F}
-            colorBlend.Colors = New Color() {EllipseBrick.OuterColor, EllipseBrick.InnerColor, _
+            colorBlend.Colors = New Color() {EllipseBrick.OuterColor, EllipseBrick.InnerColor,
                 EllipseBrick.OuterColor}
             brush.InterpolationColors = colorBlend
             gr.FillEllipse(brush, rect)
