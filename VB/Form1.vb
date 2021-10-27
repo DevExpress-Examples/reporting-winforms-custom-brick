@@ -38,7 +38,7 @@ Namespace CustomBricks
             printingSystem1.Graph.Modifier = BrickModifier.Detail
             ' Add the brick with specified dimensions to the document.
             graph.DrawBrick(brick, New RectangleF(0, 0, 150, 100))
-            printingSystem1.End().
+            printingSystem1.End()
             printingSystem1.PreviewFormEx.Show()
             #End Region
         End Sub
