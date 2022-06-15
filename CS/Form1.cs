@@ -1,10 +1,8 @@
-#region usings
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using DevExpress.XtraPrinting;
-#endregion
 using MyBrick;
 
 
@@ -27,9 +25,7 @@ namespace CustomBricks {
         }
 
         private void button2_Click(object sender, EventArgs e) {
-            #region #UsingEllipseBrick
-            Brick brick = new EllipseBrick(Color.LightGreen, Color.Blue,
-                LinearGradientMode.ForwardDiagonal);
+            Brick brick = new EllipseBrick(Color.LightGreen, Color.Blue);
             printingSystem1.Begin();
             IBrickGraphics graph = printingSystem1.Graph;
             // Specify the page area to draw a brick.
@@ -38,7 +34,6 @@ namespace CustomBricks {
             graph.DrawBrick(brick, new RectangleF(0, 0, 150, 100));
             printingSystem1.End();
             printingSystem1.PreviewFormEx.Show();
-            #endregion
         }
 
 

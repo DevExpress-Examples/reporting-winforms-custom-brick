@@ -1,13 +1,11 @@
-#region usings
 using System.Collections;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using DevExpress.Drawing;
 using DevExpress.XtraPrinting;
 using DevExpress.XtraPrinting.BrickExporters;
-#endregion
 
 namespace MyBrick {
-    #region HyperLinkBrick
     public class HyperLinkBrick : TextBrick {
 
         public HyperLinkBrick(string url)
@@ -47,8 +45,6 @@ namespace MyBrick {
             this.Font = base.Font;
         }
     }
-    #endregion
-    #region #EllipseBrick
     [BrickExporter(typeof(EllipseBrickExporter))]
     public class EllipseBrick : Brick {
 
@@ -56,16 +52,12 @@ namespace MyBrick {
         public Color InnerColor = Color.Transparent;
         public Color OuterColor = Color.Peru;
 
-        // Set gradient direction.
-        public LinearGradientMode GradientDirection = LinearGradientMode.Vertical;
-
         public EllipseBrick() {
         }
         
-        public EllipseBrick(Color InnerColor, Color OuterColor, LinearGradientMode GradientDirection) {
+        public EllipseBrick(Color InnerColor, Color OuterColor) {
             this.InnerColor = InnerColor;
             this.OuterColor = OuterColor;
-            this.GradientDirection = GradientDirection;
         }
     }
 
@@ -73,15 +65,14 @@ namespace MyBrick {
         EllipseBrick EllipseBrick { get { return (EllipseBrick)Brick; } }
         // Fills an ellipse with a linear color gradient.
         public override void Draw(IGraphics gr, RectangleF rect) {
-            LinearGradientBrush brush = new LinearGradientBrush(rect, EllipseBrick.OuterColor,
-                EllipseBrick.InnerColor, EllipseBrick.GradientDirection);
-            ColorBlend colorBlend = new ColorBlend();
-            colorBlend.Positions = new float[] { 0.0f, 0.5f, 1.0f };
-            colorBlend.Colors = new Color[] { EllipseBrick.OuterColor, EllipseBrick.InnerColor, EllipseBrick.OuterColor };
-            brush.InterpolationColors = colorBlend;
-            gr.FillEllipse(brush, rect);
+            using(DXLinearGradientBrush brush = new DXLinearGradientBrush(rect, EllipseBrick.OuterColor, EllipseBrick.InnerColor)) {
+                ColorBlend colorBlend = new ColorBlend();
+                colorBlend.Positions = new float[] { 0.0f, 0.5f, 1.0f };
+                colorBlend.Colors = new Color[] { EllipseBrick.OuterColor, EllipseBrick.InnerColor, EllipseBrick.OuterColor };
+                brush.InterpolationColors = colorBlend;
+                gr.FillEllipse(brush, rect);
+            }
         }
     }
-    #endregion
 
 }

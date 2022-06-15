@@ -30,8 +30,7 @@ Namespace CustomBricks
         Private Sub button2_Click(ByVal sender As Object, ByVal e As EventArgs) _
             Handles button2.Click
             #Region "#UsingEllipseBrick"
-            Dim brick As Brick = New EllipseBrick(Color.LightGreen, Color.Blue, _
-                                                   LinearGradientMode.ForwardDiagonal)
+            Dim brick As Brick = New EllipseBrick(Color.LightGreen, Color.Blue)
             printingSystem1.Begin()
             Dim graph As IBrickGraphics = printingSystem1.Graph
             ' Specify the page area to draw a brick.

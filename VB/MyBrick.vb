@@ -2,6 +2,7 @@
 Imports System.Collections
 Imports System.Drawing
 Imports System.Drawing.Drawing2D
+Imports DevExpress.Drawing
 Imports DevExpress.XtraPrinting
 Imports DevExpress.XtraPrinting.BrickExporters
 #End Region
@@ -57,17 +58,12 @@ Namespace MyBrick
         Public InnerColor As Color = Color.Transparent
         Public OuterColor As Color = Color.Peru
 
-        ' Set gradient direction.
-        Public GradientDirection As LinearGradientMode = LinearGradientMode.Vertical
-
         Public Sub New()
         End Sub
 
-        Public Sub New(ByVal InnerColor As Color, ByVal OuterColor As Color,
-        ByVal GradientDirection As LinearGradientMode)
+        Public Sub New(ByVal InnerColor As Color, ByVal OuterColor As Color)
             Me.InnerColor = InnerColor
             Me.OuterColor = OuterColor
-            Me.GradientDirection = GradientDirection
         End Sub
     End Class
 
@@ -80,14 +76,14 @@ Namespace MyBrick
         End Property
         ' Fills an ellipse with a linear color gradient.
         Public Overloads Overrides Sub Draw(ByVal gr As IGraphics, ByVal rect As RectangleF)
-            Dim brush As New LinearGradientBrush(rect, EllipseBrick.OuterColor,
-                EllipseBrick.InnerColor, EllipseBrick.GradientDirection)
-            Dim colorBlend As New ColorBlend()
-            colorBlend.Positions = New Single() {0.0F, 0.5F, 1.0F}
-            colorBlend.Colors = New Color() {EllipseBrick.OuterColor, EllipseBrick.InnerColor,
-                EllipseBrick.OuterColor}
-            brush.InterpolationColors = colorBlend
-            gr.FillEllipse(brush, rect)
+            Using brush As New DXLinearGradientBrush(rect, EllipseBrick.OuterColor, EllipseBrick.InnerColor)
+                Dim colorBlend As New ColorBlend()
+                colorBlend.Positions = New Single() {0.0F, 0.5F, 1.0F}
+                colorBlend.Colors = New Color() {EllipseBrick.OuterColor, EllipseBrick.InnerColor,
+                    EllipseBrick.OuterColor}
+                brush.InterpolationColors = colorBlend
+                gr.FillEllipse(brush, rect)
+            End Using
         End Sub
     End Class
 #End Region
