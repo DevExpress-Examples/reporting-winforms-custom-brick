@@ -25,50 +25,48 @@ Namespace CustomBricks
 		''' the contents of this method with the code editor.
 		''' </summary>
 		Private Sub InitializeComponent()
-			Me.components = New System.ComponentModel.Container()
-			Me.printingSystem1 = New DevExpress.XtraPrinting.PrintingSystem(Me.components)
-			Me.button1 = New System.Windows.Forms.Button()
-			Me.button2 = New System.Windows.Forms.Button()
-			CType(Me.printingSystem1, System.ComponentModel.ISupportInitialize).BeginInit()
-			Me.SuspendLayout()
-			' 
-			' button1
-			' 
-			Me.button1.Location = New System.Drawing.Point(69, 57)
-			Me.button1.Name = "button1"
-			Me.button1.Size = New System.Drawing.Size(141, 62)
-			Me.button1.TabIndex = 0
-			Me.button1.Text = "Use HyperLinkBrick"
-			Me.button1.UseVisualStyleBackColor = True
-'			Me.button1.Click += New System.EventHandler(Me.button1_Click);
-			' 
-			' button2
-			' 
-			Me.button2.Location = New System.Drawing.Point(69, 151)
-			Me.button2.Name = "button2"
-			Me.button2.Size = New System.Drawing.Size(141, 62)
-			Me.button2.TabIndex = 0
-			Me.button2.Text = "Use EllipseBrick"
-			Me.button2.UseVisualStyleBackColor = True
-'			Me.button2.Click += New System.EventHandler(Me.button2_Click);
-			' 
-			' Form1
-			' 
-			Me.AutoScaleDimensions = New System.Drawing.SizeF(6F, 13F)
-			Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-			Me.ClientSize = New System.Drawing.Size(284, 264)
-			Me.Controls.Add(Me.button2)
-			Me.Controls.Add(Me.button1)
-			Me.Name = "Form1"
-			Me.Text = "Form1"
-			CType(Me.printingSystem1, System.ComponentModel.ISupportInitialize).EndInit()
-			Me.ResumeLayout(False)
+            Me.components = New System.ComponentModel.Container()
+            Me.printingSystem1 = New DevExpress.XtraPrinting.PrintingSystem(Me.components)
+            Me.button1 = New System.Windows.Forms.Button()
+            Me.button2 = New System.Windows.Forms.Button()
+            CType(Me.printingSystem1, System.ComponentModel.ISupportInitialize).BeginInit()
+            Me.SuspendLayout()
+            '
+            'button1
+            '
+            Me.button1.Location = New System.Drawing.Point(69, 57)
+            Me.button1.Name = "button1"
+            Me.button1.Size = New System.Drawing.Size(141, 62)
+            Me.button1.TabIndex = 0
+            Me.button1.Text = "Show HyperLinkBrick"
+            Me.button1.UseVisualStyleBackColor = True
+            '
+            'button2
+            '
+            Me.button2.Location = New System.Drawing.Point(69, 151)
+            Me.button2.Name = "button2"
+            Me.button2.Size = New System.Drawing.Size(141, 62)
+            Me.button2.TabIndex = 0
+            Me.button2.Text = "Show EllipseBrick"
+            Me.button2.UseVisualStyleBackColor = True
+            '
+            'Form1
+            '
+            Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+            Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+            Me.ClientSize = New System.Drawing.Size(284, 264)
+            Me.Controls.Add(Me.button2)
+            Me.Controls.Add(Me.button1)
+            Me.Name = "Form1"
+            Me.Text = "Form1"
+            CType(Me.printingSystem1, System.ComponentModel.ISupportInitialize).EndInit()
+            Me.ResumeLayout(False)
 
-		End Sub
+        End Sub
 
-		#End Region
+#End Region
 
-		Private printingSystem1 As DevExpress.XtraPrinting.PrintingSystem
+        Private printingSystem1 As DevExpress.XtraPrinting.PrintingSystem
 		Private WithEvents button1 As System.Windows.Forms.Button
 		Private WithEvents button2 As System.Windows.Forms.Button
 	End Class
