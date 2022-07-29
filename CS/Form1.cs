@@ -27,7 +27,7 @@ namespace CustomBricks {
         }
 
         private void button2_Click(object sender, EventArgs e) {
-            #region UsingEllipseBrick
+            #region #UsingEllipseBrick
             Brick brick = new EllipseBrick(Color.LightGreen, Color.Blue);
             printingSystem1.Begin();
             IBrickGraphics graph = printingSystem1.Graph;
