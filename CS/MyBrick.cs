@@ -48,7 +48,7 @@ namespace MyBrick {
         }
     }
     #endregion
-    #region #EllipseBrick
+    #region EllipseBrick
     [BrickExporter(typeof(EllipseBrickExporter))]
     public class EllipseBrick : Brick {
 

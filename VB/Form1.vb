@@ -29,7 +29,7 @@ Namespace CustomBricks
 
         Private Sub button2_Click(ByVal sender As Object, ByVal e As EventArgs) _
             Handles button2.Click
-            #Region "#UsingEllipseBrick"
+            #Region "EllipseBrick"
             Dim brick As Brick = New EllipseBrick(Color.LightGreen, Color.Blue, _
                                                    LinearGradientMode.ForwardDiagonal)
             printingSystem1.Begin()
