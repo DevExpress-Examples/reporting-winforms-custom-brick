@@ -49,7 +49,7 @@ Namespace MyBrick
         End Sub
     End Class
 #End Region
-#Region "EllipseBrick"
+#Region "#EllipseBrick"
     <BrickExporter(GetType(EllipseBrickExporter))> _
     Public Class EllipseBrick
         Inherits Brick
@@ -77,7 +77,7 @@ Namespace MyBrick
         ' Fills an ellipse with a linear color gradient.
         Public Overloads Overrides Sub Draw(ByVal gr As IGraphics, ByVal rect As RectangleF)
             Using brush As New DXLinearGradientBrush(rect, EllipseBrick.OuterColor, EllipseBrick.InnerColor)
-                Dim colorBlend As New ColorBlend()
+                Dim colorBlend As New DXColorBlend()
                 colorBlend.Positions = New Single() {0.0F, 0.5F, 1.0F}
                 colorBlend.Colors = New Color() {EllipseBrick.OuterColor, EllipseBrick.InnerColor,
                     EllipseBrick.OuterColor}

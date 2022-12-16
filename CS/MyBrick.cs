@@ -1,14 +1,11 @@
-#region usings
 using System.Collections;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using DevExpress.Drawing;
 using DevExpress.XtraPrinting;
 using DevExpress.XtraPrinting.BrickExporters;
-#endregion
 
 namespace MyBrick {
-    #region HyperLinkBrick
     public class HyperLinkBrick : TextBrick {
 
         public HyperLinkBrick(string url)
@@ -48,8 +45,6 @@ namespace MyBrick {
             this.Font = base.Font;
         }
     }
-    #endregion
-    #region EllipseBrick
     [BrickExporter(typeof(EllipseBrickExporter))]
     public class EllipseBrick : Brick {
 
@@ -71,7 +66,7 @@ namespace MyBrick {
         // Fills an ellipse with a linear color gradient.
         public override void Draw(IGraphics gr, RectangleF rect) {
             using(DXLinearGradientBrush brush = new DXLinearGradientBrush(rect, EllipseBrick.OuterColor, EllipseBrick.InnerColor)) {
-                ColorBlend colorBlend = new ColorBlend();
+                DXColorBlend colorBlend = new DXColorBlend();
                 colorBlend.Positions = new float[] { 0.0f, 0.5f, 1.0f };
                 colorBlend.Colors = new Color[] { EllipseBrick.OuterColor, EllipseBrick.InnerColor, EllipseBrick.OuterColor };
                 brush.InterpolationColors = colorBlend;
@@ -79,6 +74,5 @@ namespace MyBrick {
             }
         }
     }
-    #endregion
 
 }
