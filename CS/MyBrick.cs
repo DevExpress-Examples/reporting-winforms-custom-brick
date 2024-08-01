@@ -1,11 +1,14 @@
+#region usings
 using System.Collections;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using DevExpress.Drawing;
 using DevExpress.XtraPrinting;
 using DevExpress.XtraPrinting.BrickExporters;
+#endregion
 
 namespace MyBrick {
+    #region HyperLinkBrick
     public class HyperLinkBrick : TextBrick {
 
         public HyperLinkBrick(string url)
@@ -45,6 +48,8 @@ namespace MyBrick {
             this.Font = base.Font;
         }
     }
+    #endregion
+    #region EllipseBrick
     [BrickExporter(typeof(EllipseBrickExporter))]
     public class EllipseBrick : Brick {
 
@@ -74,5 +79,6 @@ namespace MyBrick {
             }
         }
     }
+    #endregion
 
 }
