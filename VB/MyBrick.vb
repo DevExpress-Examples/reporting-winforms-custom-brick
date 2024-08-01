@@ -49,7 +49,7 @@ Namespace MyBrick
         End Sub
     End Class
 #End Region
-#Region "#EllipseBrick"
+#Region "EllipseBrick"
     <BrickExporter(GetType(EllipseBrickExporter))> _
     Public Class EllipseBrick
         Inherits Brick
