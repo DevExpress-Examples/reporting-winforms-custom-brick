@@ -31,7 +31,7 @@ The **EllipseBrick** brick inherits from the [Brick](https://docs.devexpress.com
 - [How to scroll a document in the print preview to a specific page or brick](https://github.com/DevExpress-Examples/Reporting_how-to-scroll-a-document-in-the-print-preview-to-a-specific-page-or-brick-e2386)
 
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=reporting-winforms-custom-brick&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=reporting-winforms-custom-brick&~~~was_helpful=no)
 
